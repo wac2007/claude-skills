@@ -5,6 +5,7 @@ Checkpoint of the `ob` plugin work. Last updated: 2026-06-15.
 ## Done
 - **Plugin scaffolded** at `./ob` (name `ob`, skills-dir/marketplace-installable). Commands namespace to `/ob:*`.
 - **`ob-setup` skill complete** (`ob/skills/ob-setup/SKILL.md`): 10 idempotent steps (validate + implement), Quick reference, Target structure, Common mistakes. References bundled files instead of inlining content.
+- **`ob-weekly` skill complete** (`ob/skills/ob-weekly/SKILL.md`): 8-step headless skill — resolves last closed ISO week, extracts tasks/decisions/narrative from daily notes, synthesizes summary, writes weekly file, archives dailies. Fully idempotent.
 - **Assets extracted** (`ob/assets/`): `vault-CLAUDE.md`, `global-pointer.md`, `Dashboard.md`, `gitignore`, `Tag System.md`, `hotkeys.json`, `launchagents/*.plist.tmpl`, `templates/Daily.md`, `templates/Weekly.md`.
 - **Scripts** (`ob/scripts/`): `ob-install.sh` (writes `~/.claude/ob/ob.env`, copies scripts, bootstraps launchd), `ob-daily-rollover.sh` (create today + prune empty previous), `ob-weekly-run.sh` (headless `claude -p "/ob:weekly"`).
 - **Marketplace** catalog at `.claude-plugin/marketplace.json` → `./ob`.
@@ -18,7 +19,7 @@ Built by hand in earlier turns, NOT yet via `ob:setup`, so it diverges from the 
 - Legacy `Talent Stream/` (with `Worklog/`) and `Research/`, `Web Clipper/`, `Quick Ref/`, `Study/` are unmigrated.
 
 ## Pending
-- **Build the other skills**: `ob-weekly` (next — summary + move that week's dailies into `06 Daily/Weeks/YYYY-[W]ww/`), then `ob-capture`, `ob-daily`, `ob-review`, `ob-emerge`, `ob-connect`, `ob-tidy`, `ob-audit`.
+- **Build the other skills**: `ob-capture`, `ob-daily`, `ob-review`, `ob-emerge`, `ob-connect`, `ob-tidy`, `ob-audit`.
 - **Remaining templates**: `Note`, `Project Context`, `Area MOC`, `TIL`, `Person`, `Asset`.
 - **Run `ob:setup` on the vault** (not done yet). This will reconcile the structure, but:
   - Rename early Area MOCs to the target taxonomy: `Work - CRM` → `Work`; `Keyboards & Peripherals` + `Maker & Electronics` → under `Hobbies/`; `Finances & Bitcoin` → `Finances/` (with `Investments/` + `Bitcoin/`).
@@ -40,4 +41,4 @@ Built by hand in earlier turns, NOT yet via `ob:setup`, so it diverges from the 
 - `08 Templates/` numbering vs keeping `Templates/` (Templater reconfig cost).
 
 ## Next step
-Build `ob-weekly` (the weekly summary + dailies-archiving skill).
+Build `ob-capture` (quick capture to `00 Inbox/` with frontmatter tagging).

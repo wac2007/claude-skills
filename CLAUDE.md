@@ -28,12 +28,14 @@ A Claude Code plugin that sets up and operates an Obsidian vault organized by **
 - `ob/scripts/` — `ob-install.sh`, `ob-daily-rollover.sh`, `ob-weekly-run.sh`.
 - `ob/assets/` — `vault-CLAUDE.md`, `global-pointer.md`, `Dashboard.md`, `gitignore`, `Tag System.md`, `hotkeys.json`, `launchagents/`, `templates/`.
 - `.claude-plugin/marketplace.json` — catalog.
+- `prd/` — global / cross-skill PRDs.
 
 ## When building a new ob-* skill
 1. Create `ob/skills/<name>/SKILL.md` (concise frontmatter: name + description; no personal data; shareable/generic).
 2. Put any non-trivial content/scripts in `ob/assets/` or `ob/scripts/` and reference via `${CLAUDE_PLUGIN_ROOT}`.
 3. Respect the write guards and the schema. Keep it idempotent.
-4. Update `STATUS.md`.
+4. Write the skill's PRD to `ob/skills/<name>/PRD.md`. Global / cross-skill PRDs go in `prd/`.
+5. Update `STATUS.md`.
 
 ## Reference video that started this
 Dan Harrison, "I Stopped Building AI Agents and Did This Instead" — file structure as a map of cognitive architecture.
