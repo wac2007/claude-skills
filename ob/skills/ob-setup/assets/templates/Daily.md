@@ -1,6 +1,6 @@
 ---
 type: daily
-date: {{date}}
+date: <% tp.date.now("YYYY-MM-DD") %>
 tags: []
 ---
 ## Tasks

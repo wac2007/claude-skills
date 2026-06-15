@@ -5,18 +5,13 @@ set -euo pipefail
 source "$HOME/.claude/ob/ob.env"
 
 DAILY="$VAULT/06 Daily"
-TEMPLATE="$VAULT/08 Templates/Daily.md"
 TODAY="$(date +%F)"                       # YYYY-MM-DD
 TODAY_FILE="$DAILY/$TODAY.md"
 mkdir -p "$DAILY"
 
-# 1) Ensure today's note exists.
+# 1) Ensure today's note exists (always write inline; vault template uses Templater syntax for Obsidian-created notes).
 if [ ! -f "$TODAY_FILE" ]; then
-  if [ -f "$TEMPLATE" ]; then
-    sed "s/{{date}}/$TODAY/g" "$TEMPLATE" > "$TODAY_FILE"
-  else
-    printf -- '---\ntype: daily\ndate: %s\n---\n## Tasks\n## Notes\n' "$TODAY" > "$TODAY_FILE"
-  fi
+  printf -- '---\ntype: daily\ndate: %s\ntags: []\n---\n## Tasks\n\n## Notes\n\n## Log\n' "$TODAY" > "$TODAY_FILE"
 fi
 
 # 2) Prune the most recent PRIOR daily note if empty.
