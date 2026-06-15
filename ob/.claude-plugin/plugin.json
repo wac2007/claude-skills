@@ -1,0 +1,5 @@
+{
+  "name": "ob",
+  "description": "Obsidian second-brain toolkit. Sets up and operates a vault organized by lifecycle (Inbox / Atlas / Projects / End Products / Areas / Resources), with write guards, a controlled tag vocabulary, a Dataview dashboard, single-tool git backup, and daily/weekly note automation. Setup skill plus ob-* workflow skills.",
+  "version": "0.1.0"
+}

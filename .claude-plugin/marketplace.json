@@ -1,0 +1,11 @@
+{
+  "name": "claude-skills",
+  "owner": { "name": "claude-skills" },
+  "plugins": [
+    {
+      "name": "ob",
+      "source": "./ob",
+      "description": "Obsidian second-brain toolkit: set up and operate a vault organized by lifecycle, with write guards, a controlled tag vocabulary, a Dataview dashboard, single-tool git backup, and daily/weekly note automation."
+    }
+  ]
+}

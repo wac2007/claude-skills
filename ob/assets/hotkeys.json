@@ -1,0 +1,7 @@
+{
+  "templater-obsidian:create-new-note-from-template": [{ "modifiers": ["Mod", "Shift"], "key": "T" }],
+  "periodic-notes:open-daily-note": [{ "modifiers": ["Mod", "Shift"], "key": "D" }],
+  "graph:open": [{ "modifiers": ["Alt"], "key": "G" }],
+  "app:go-back": [{ "modifiers": ["Alt"], "key": "ArrowLeft" }],
+  "app:go-forward": [{ "modifiers": ["Alt"], "key": "ArrowRight" }]
+}
