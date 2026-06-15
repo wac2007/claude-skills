@@ -25,14 +25,14 @@ A Claude Code plugin that sets up and operates an Obsidian vault organized by **
 ## Layout
 - `ob/.claude-plugin/plugin.json` — manifest.
 - `ob/skills/ob-setup/SKILL.md` — the orchestrator (done). Other `ob/skills/ob-*` are TODO.
-- `ob/scripts/` — `ob-install.sh`, `ob-daily-rollover.sh`, `ob-weekly-run.sh`.
-- `ob/assets/` — `vault-CLAUDE.md`, `global-pointer.md`, `Dashboard.md`, `gitignore`, `Tag System.md`, `hotkeys.json`, `launchagents/`, `templates/`.
+- `ob/skills/ob-setup/assets/` — `vault-CLAUDE.md`, `global-pointer.md`, `Dashboard.md`, `gitignore`, `Tag System.md`, `hotkeys.json`, `launchagents/`, `templates/`. Bundled inside ob-setup so `npx skills add` carries them along.
+- `ob/skills/ob-setup/scripts/` — `ob-install.sh`, `ob-daily-rollover.sh`, `ob-weekly-run.sh`. ob-install.sh copies these to `~/.claude/ob/` (stable runtime path); all other skills depend on that path.
 - `.claude-plugin/marketplace.json` — catalog.
 - `prd/` — global / cross-skill PRDs.
 
 ## When building a new ob-* skill
 1. Create `ob/skills/<name>/SKILL.md` (concise frontmatter: name + description; no personal data; shareable/generic).
-2. Put any non-trivial content/scripts in `ob/assets/` or `ob/scripts/` and reference via `${CLAUDE_PLUGIN_ROOT}`.
+2. Skills other than ob-setup are instruction-only: depend on `~/.claude/ob/ob.env` (written by ob-install.sh). Don't bundle assets — ob-setup owns all bundled files.
 3. Respect the write guards and the schema. Keep it idempotent.
 4. Write the skill's PRD to `ob/skills/<name>/PRD.md`. Global / cross-skill PRDs go in `prd/`.
 5. Update `STATUS.md`.

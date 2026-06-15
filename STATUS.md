@@ -6,8 +6,8 @@ Checkpoint of the `ob` plugin work. Last updated: 2026-06-15.
 - **Plugin scaffolded** at `./ob` (name `ob`, skills-dir/marketplace-installable). Commands namespace to `/ob:*`.
 - **`ob-setup` skill complete** (`ob/skills/ob-setup/SKILL.md`): 10 idempotent steps (validate + implement), Quick reference, Target structure, Common mistakes. References bundled files instead of inlining content.
 - **`ob-weekly` skill complete** (`ob/skills/ob-weekly/SKILL.md`): 8-step headless skill — resolves last closed ISO week, extracts tasks/decisions/narrative from daily notes, synthesizes summary, writes weekly file, archives dailies. Fully idempotent.
-- **Assets extracted** (`ob/assets/`): `vault-CLAUDE.md`, `global-pointer.md`, `Dashboard.md`, `gitignore`, `Tag System.md`, `hotkeys.json`, `launchagents/*.plist.tmpl`, `templates/Daily.md`, `templates/Weekly.md`.
-- **Scripts** (`ob/scripts/`): `ob-install.sh` (writes `~/.claude/ob/ob.env`, copies scripts, bootstraps launchd), `ob-daily-rollover.sh` (create today + prune empty previous), `ob-weekly-run.sh` (headless `claude -p "/ob:weekly"`).
+- **Assets extracted** (`ob/skills/ob-setup/assets/`): `vault-CLAUDE.md`, `global-pointer.md`, `Dashboard.md`, `gitignore`, `Tag System.md`, `hotkeys.json`, `launchagents/*.plist.tmpl`, `templates/Daily.md`, `templates/Weekly.md`. Bundled inside ob-setup so `npx skills add` carries them.
+- **Scripts** (`ob/skills/ob-setup/scripts/`): `ob-install.sh` (writes `~/.claude/ob/ob.env`, copies scripts, bootstraps launchd), `ob-daily-rollover.sh` (create today + prune empty previous), `ob-weekly-run.sh` (headless `claude -p "/ob:weekly"`). ob-install.sh copies to `~/.claude/ob/` — all other skills depend on that stable path.
 - **Marketplace** catalog at `.claude-plugin/marketplace.json` → `./ob`.
 
 ## State of the actual vault (`~/Obsidian/MyNotesVault`)
