@@ -1,6 +1,6 @@
 # claude-skills
 
-A personal Claude Code marketplace. Each top-level folder is a plugin; `.claude-plugin/marketplace.json` is the catalog.
+Personal Claude Code skills. Skills are discovered via `.claude-plugin/marketplace.json` and installable with `npx skills`.
 
 ## Plugins
 
@@ -10,24 +10,33 @@ Sets up and operates an Obsidian vault organized by **lifecycle, not topic**
 
 Entry skill: `/ob:setup`. See `ob/README.md` for the full layout and `STATUS.md` for current progress.
 
-## Use locally
-This repo is the source of truth. To run a plugin, load it from here:
+## Install
 
-```
-claude --plugin-dir ~/development/claude-skills
-```
+### From GitHub (public)
 
-…or add the marketplace and install:
-
-```
-/plugin marketplace add ~/development/claude-skills
-/plugin install ob@claude-skills
+```bash
+npx skills add wac2007/claude-skills
 ```
 
-(Skills-dir auto-load — i.e. dropping a copy in `~/.claude/skills/ob/` — also works, but keep this repo as the editable source.)
+### From a local clone
+
+```bash
+npx skills add ~/development/claude-skills
+```
+
+Both commands are interactive — select which skills and agents to install. Add `-g` to install globally (`~/.claude/skills/`) or `-y` to skip prompts.
+
+```bash
+# Global, non-interactive, Claude Code only
+npx skills add wac2007/claude-skills -g -a claude-code -y
+```
 
 ## Distribute
-Push as a public GitHub repo; others add it with `/plugin marketplace add <owner>/<repo>` and install `ob@claude-skills`.
+Push as a public GitHub repo. Others install with:
+
+```bash
+npx skills add wac2007/claude-skills
+```
 
 ## Continuation
 - `STATUS.md` — what's done, what's pending, open decisions.
