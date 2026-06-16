@@ -5,10 +5,18 @@ description: Install all skills from this repo into the global ~/.claude/skills/
 
 # Install Skills
 
-Run this to install all skills from the current repo into the global Claude Code skills directory:
+Find the repo root by looking for `skills-lock.json` starting from the current working directory and walking up. Run:
 
 ```bash
-npx skills add ~/development/claude-skills -g
+git -C "$(pwd)" rev-parse --show-toplevel 2>/dev/null
+```
+
+If that returns a path containing `skills-lock.json`, use it as `<REPO_ROOT>`. Otherwise ask the user where the repo is cloned.
+
+Then install all skills globally:
+
+```bash
+npx skills add <REPO_ROOT> -g -y
 ```
 
 After the command completes, confirm the install succeeded by checking:
