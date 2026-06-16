@@ -8,7 +8,7 @@ description: Install all skills from this repo into the global ~/.claude/skills/
 Run this to install all skills from the current repo into the global Claude Code skills directory:
 
 ```bash
-npx skills add ~/development/claude-skills
+npx skills add ~/development/claude-skills -g
 ```
 
 After the command completes, confirm the install succeeded by checking:
