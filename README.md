@@ -38,6 +38,10 @@ Push as a public GitHub repo. Others install with:
 npx skills add wac2007/claude-skills
 ```
 
+## Inspiration
+- [eugeniughelbur/obsidian-second-brain](https://github.com/eugeniughelbur/obsidian-second-brain) — AI-first vault commands; source reference for most `ob:*` skill designs
+- [sennaBruno/claude-skills](https://github.com/sennaBruno/claude-skills) — Claude Code skills reference
+
 ## Continuation
 - `STATUS.md` — what's done, what's pending, open decisions.
 - `CLAUDE.md` — design context and conventions for resuming work in a fresh session.

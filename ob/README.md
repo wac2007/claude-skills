@@ -6,9 +6,23 @@ a controlled tag vocabulary, a Dataview dashboard, single-tool git backup, and
 daily/weekly note automation.
 
 ## Skills
-- `/ob:setup` — scaffold & audit the vault (this is the entry point).
-- `/ob:weekly` — weekly summary + archive that week's daily notes. *(planned)*
-- `/ob:capture` `/ob:daily` `/ob:review` `/ob:emerge` `/ob:connect` `/ob:tidy` `/ob:audit` *(planned)*
+
+### Wave 0 — Foundation (done)
+- `/ob:setup` — scaffold & audit the vault (entry point; includes CRITICAL_FACTS.md + Projects Index).
+- `/ob:weekly` — weekly summary + archive that week's daily notes.
+
+### Wave 1 — Core daily use (done)
+- `/ob:world [L0|L1|L2|L3]` — load vault context at four progressive token budgets (default L1).
+- `/ob:capture <text>` — zero-friction capture to `00 Inbox/` with correct frontmatter.
+- `/ob:daily` / `/ob:daily log <text>` — create today's daily note or append a session log entry.
+- `/ob:find <query>` — smart vault search; ranked results with path, type, and summary.
+- `/ob:save` — extract decisions, tasks, and people from current conversation and write to vault.
+
+### Wave 2 — People, projects, ingest *(planned)*
+- `/ob:person` `/ob:decide` `/ob:project` `/ob:projects` `/ob:ingest` `/ob:synthesize` `/ob:reconcile` `/ob:recap` `/ob:review` `/ob:health` `/ob:adr`
+
+### Wave 3–4 — Deep synthesis *(planned)*
+- `/ob:architect` `/ob:emerge` `/ob:connect` `/ob:challenge` `/ob:panel` `/ob:vault-synthesis` `/ob:idea-discovery` `/ob:graduate` `/ob:learn`
 
 ## Layout
 ```

@@ -20,8 +20,18 @@ Built by hand in earlier turns, NOT yet via `ob:setup`, so it diverges from the 
 - Legacy `Talent Stream/` (with `Worklog/`) and `Research/`, `Web Clipper/`, `Quick Ref/`, `Study/` are unmigrated.
 - Vault has 30+ templates in `Templates/` — Step 4 will adapt the 8 ob slots and leave the rest untouched.
 
+## Wave 1 skills — complete (2026-06-16)
+- **`ob-capture`** (`ob/skills/ob-capture/SKILL.md`): zero-friction `00 Inbox/` capture with frontmatter. Idempotent filename (date-slug).
+- **`ob-find`** (`ob/skills/ob-find/SKILL.md`): smart vault search with recency+relevance scoring. Read-only. Excludes `99 Archives/` by default.
+- **`ob-daily`** (`ob/skills/ob-daily/SKILL.md`): creates `06 Daily/YYYY-MM-DD.md` from Daily template; `/ob:daily log <text>` appends to `## Log`. Idempotent.
+- **`ob-world`** (`ob/skills/ob-world/SKILL.md`): L0–L3 progressive context engine. L0=CRITICAL_FACTS.md, L1=+project _context.md, L2=+area MOC+last 3 dailies, L3=full Atlas+Resources.
+- **`ob-save`** (`ob/skills/ob-save/SKILL.md`): extracts decisions/tasks/people from current conversation, writes to managed regions in project note. Idempotent. Ambiguous → `07 Claude/`.
+- **Issue #3 done**: root README.md has Inspiration section.
+- **Marketplace updated**: all 5 new skills added to `.claude-plugin/marketplace.json`.
+
 ## Pending
-- **Build the other skills**: `ob-capture`, `ob-daily`, `ob-review`, `ob-emerge`, `ob-connect`, `ob-tidy`, `ob-audit`.
+- **Wave 2 skills**: `ob-person` (#10), `ob-decide` (#11), `ob-project` (#12), `ob-projects` (#13), `ob-ingest` (#14), `ob-synthesize` (#15), `ob-reconcile` (#16), `ob-recap` (#17), `ob-review` (#18), `ob-health` (#19), `ob-adr` (#20).
+- **Wave 3–4 skills**: `ob-architect` (#9), `ob-emerge` (#21), `ob-connect` (#22), `ob-challenge` (#23), `ob-panel` (#24), `ob-vault-synthesis` (#25), `ob-idea-discovery` (#26), `ob-graduate` (#27), `ob-learn` (#28).
 - **Run `ob:setup` on the vault** (not done yet). This will reconcile the structure:
   - Rename early Area MOCs to the target taxonomy: `Work - CRM` → `Work`; `Keyboards & Peripherals` + `Maker & Electronics` → under `Hobbies/`; `Finances & Bitcoin` → `Finances/` (with `Investments/` + `Bitcoin/`).
   - Migrate `Talent Stream/Worklog/*` into the unified `06 Daily/`.
