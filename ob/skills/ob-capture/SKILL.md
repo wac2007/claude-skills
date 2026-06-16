@@ -9,6 +9,8 @@ Writes a single note to `00 Inbox/` with correct frontmatter. No questions asked
 
 **Write guard:** `00 Inbox/` only. Never writes outside this folder.
 
+**Implementation note:** vault paths contain spaces (e.g. `00 Inbox/`). Always use the Bash tool with quoted paths — never the Write/Edit tools directly on vault files.
+
 ## Step 0 — Resolve vault path
 
 Read `~/.claude/ob/ob.env` to get `$VAULT`. If absent, stop:

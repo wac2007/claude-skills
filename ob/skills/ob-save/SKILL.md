@@ -11,6 +11,8 @@ Scans the current conversation, extracts structured items, and writes them to th
 - `02 Projects/` — append-only inside managed regions
 - `07 Claude/` — ambiguous items only, awaiting triage
 
+**Implementation note:** vault paths contain spaces (e.g. `02 Projects/`). Always use the Bash tool with quoted paths — never the Write/Edit tools directly on vault files.
+
 ## Step 0 — Resolve vault path
 
 Read `~/.claude/ob/ob.env` to get `$VAULT`. If absent, stop: "ob.env not found — run /ob:setup first."

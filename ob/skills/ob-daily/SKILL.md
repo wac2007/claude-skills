@@ -9,6 +9,8 @@ Creates today's daily note in `06 Daily/` from the Daily template, or appends a 
 
 **Write guard:** `06 Daily/` only. Never writes to any other bucket.
 
+**Implementation note:** vault paths contain spaces (e.g. `06 Daily/`). Always use the Bash tool with quoted paths — never the Write/Edit tools directly on vault files.
+
 ## Step 0 — Resolve vault path
 
 Read `~/.claude/ob/ob.env` to get `$VAULT`. If absent, stop: "ob.env not found — run /ob:setup first."
