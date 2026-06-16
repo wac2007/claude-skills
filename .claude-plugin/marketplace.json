@@ -1,11 +1,15 @@
 {
-  "name": "claude-skills",
-  "owner": { "name": "claude-skills" },
+  "name": "wac2007",
+  "owner": { "name": "wac2007" },
   "plugins": [
     {
       "name": "ob",
       "source": "./ob",
-      "description": "Obsidian second-brain toolkit: set up and operate a vault organized by lifecycle, with write guards, a controlled tag vocabulary, a Dataview dashboard, single-tool git backup, and daily/weekly note automation."
+      "description": "Obsidian second-brain toolkit: set up and operate a vault organized by lifecycle, with write guards, a controlled tag vocabulary, a Dataview dashboard, single-tool git backup, and daily/weekly note automation.",
+      "skills": [
+        "./skills/ob-setup",
+        "./skills/ob-weekly"
+      ]
     }
   ]
 }

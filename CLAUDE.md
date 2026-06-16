@@ -35,7 +35,8 @@ A Claude Code plugin that sets up and operates an Obsidian vault organized by **
 2. Skills other than ob-setup are instruction-only: depend on `~/.claude/ob/ob.env` (written by ob-install.sh). Don't bundle assets — ob-setup owns all bundled files.
 3. Respect the write guards and the schema. Keep it idempotent.
 4. Write the skill's PRD to `ob/skills/<name>/PRD.md`. Global / cross-skill PRDs go in `prd/`.
-5. Update `STATUS.md`.
+5. **Add `"./skills/<name>"` to the `skills` array in `.claude-plugin/marketplace.json`** — required for `npx skills add` discovery. See `prd/npx-skills-compat.md`.
+6. Update `STATUS.md`.
 
 ## Reference video that started this
 Dan Harrison, "I Stopped Building AI Agents and Did This Instead" — file structure as a map of cognitive architecture.
