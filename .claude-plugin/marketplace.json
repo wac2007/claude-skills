@@ -3,6 +3,14 @@
   "owner": { "name": "wac2007" },
   "plugins": [
     {
+      "name": "helper-skills",
+      "source": "./helper-skills",
+      "description": "Development helper skills for the claude-skills repo — installation utilities and local testing tools.",
+      "skills": [
+        "./skills/install-skills"
+      ]
+    },
+    {
       "name": "ob",
       "source": "./ob",
       "description": "Obsidian second-brain toolkit: set up and operate a vault organized by lifecycle, with write guards, a controlled tag vocabulary, a Dataview dashboard, single-tool git backup, and daily/weekly note automation.",
@@ -33,7 +41,8 @@
         "./skills/ob-graduate",
         "./skills/ob-panel",
         "./skills/ob-idea-discovery",
-        "./skills/ob-learn"
+        "./skills/ob-learn",
+        "./skills/ob-fireflies"
       ]
     }
   ]

@@ -61,6 +61,10 @@ Built by hand in earlier turns, NOT yet via `ob:setup`, so it diverges from the 
 - **GitHub issues**: all 21 issues closed (#1, #9–#28). Repository at `wac2007/claude-skills` has 0 open issues.
 - **Optional remaining hygiene**: create `01 Atlas/Computing Concepts.md` MOC; migrate `Study/` into ob buckets; move 4 SVGZ files from vault root.
 
+## Post-Wave skills
+- **`ob-fireflies`**: fetch a Fireflies.ai meeting transcript via MCP and save to `05 Resources/`. Accepts a meeting URL or raw transcript ID. Writes a structured note with summary, action items, and full transcript — ready for `/ob:save` to route decisions/tasks into the active project.
+- **Marketplace updated**: `ob-fireflies` added to `.claude-plugin/marketplace.json`.
+
 ## Pending
 - Old single-skill version parked at `~/.claude/ob-setup.old/` — safe to delete.
 
