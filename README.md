@@ -12,13 +12,37 @@ Entry skill: `/ob:setup`. See `ob/README.md` for the full layout and `STATUS.md`
 
 ## Install
 
+### First time (bootstrap)
+
+After cloning, run the bootstrap script once to install all skills globally:
+
+```bash
+./bootstrap.sh
+```
+
+Or equivalently:
+
+```bash
+npx skills add ~/development/claude-skills -g -y
+```
+
+After this, `/install-skills` is available inside Claude Code for all future updates.
+
 ### From GitHub (public)
 
 ```bash
 npx skills add wac2007/claude-skills
 ```
 
-### From a local clone
+### From a local clone (after bootstrap)
+
+Inside Claude Code, use the skill:
+
+```
+/install-skills
+```
+
+Or run directly:
 
 ```bash
 npx skills add ~/development/claude-skills

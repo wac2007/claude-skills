@@ -12,6 +12,15 @@ A Claude Code plugin that sets up and operates an Obsidian vault organized by **
 - Repo↔vault boundary: the vault may point at a code repo's `.planning/`; a repo NEVER points into the vault.
 - Tags: structure/state go in frontmatter properties (`type`,`status`,`area`,`project`); `#tags` are topical only, from `01 Atlas/Tag System.md`.
 
+## Bootstrap (first-time setup)
+If `/install-skills` is not yet available (fresh clone), run this from the terminal:
+```bash
+./bootstrap.sh
+# or equivalently:
+npx skills add ~/development/claude-skills -g -y
+```
+After that, `/install-skills` is available inside Claude Code for all future updates.
+
 ## Hard rules (never override)
 - **Never bypass `npx skills add`** for skill installation. Do not use direct `cp`, `ln -s`, or shell loops as alternatives. The canonical install command is `npx skills add ~/development/claude-skills`.
 
