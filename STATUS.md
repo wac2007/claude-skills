@@ -29,9 +29,33 @@ Built by hand in earlier turns, NOT yet via `ob:setup`, so it diverges from the 
 - **Issue #3 done**: root README.md has Inspiration section.
 - **Marketplace updated**: all 5 new skills added to `.claude-plugin/marketplace.json`.
 
+## Wave 2 skills — complete (2026-06-16)
+- **`ob-person`** (#10): create/update person note in `01 Atlas/People/` using Person template. Idempotent (update if exists).
+- **`ob-decide`** (#11): append timestamped decision to active project's managed Decisions region. Append-only.
+- **`ob-project`** (#12): scaffold `02 Projects/<name>/` with `_context.md` + managed regions; updates Projects Index. One-question "done" condition.
+- **`ob-projects`** (#13): live project table from `_context.md` frontmatter + git activity. Read-only.
+- **`ob-ingest`** (#14): fetch URL/PDF/audio → write to `05 Resources/`, update 5–15 related `01 Atlas/` notes via managed regions. Idempotent.
+- **`ob-synthesize`** (#15): cluster recent Resources+Atlas notes → write/update synthesis pages in `01 Atlas/Synthesis/`. `source: agent` tagged. Idempotent.
+- **`ob-reconcile`** (#16): detect contradictions across Atlas+Resources, propose resolutions, apply only with confirmation. Managed-region writes only.
+- **`ob-recap`** (#17): on-demand day/week/month summary from daily notes. Read-only.
+- **`ob-review`** (#18): structured week/month review — recap + open tasks + pending decisions + next-period priorities. Writes to `06 Daily/Weeks/` or `06 Daily/Months/`.
+- **`ob-health`** (#19): vault audit — HIGH(contradictions), MEDIUM(stale), LOW(orphans, missing frontmatter). Read-only.
+- **`ob-adr`** (#20): create dated ADR in `02 Projects/<project>/adr/` and backlink in `_context.md`. Idempotent.
+- **Marketplace updated**: all 11 new skills added to `.claude-plugin/marketplace.json`.
+
+## Wave 3–4 skills — complete (2026-06-16)
+- **`ob-architect`** (#9): scan codebase → write `01 Atlas/Architecture/<project>.md` with managed region. Re-run refreshes auto-generated sections; preserves hand-edited content below the region.
+- **`ob-emerge`** (#21): scan last 30 days of Daily/Inbox/Atlas → surface 3–7 unnamed patterns with evidence quotes. Optional promotion to Atlas note with confirmation.
+- **`ob-connect`** (#22): find 3–5 structural bridges between two named domains using vault notes. Cites one note from each domain per bridge. Read-only.
+- **`ob-challenge`** (#23): generate 3–5 vault-grounded counter-arguments against a proposed idea using past decisions, failures, and principles. Sorted strongest-first. Read-only.
+- **`ob-vault-synthesis`** (#25): deep cross-reference of all vault notes on a topic → agreements, contradictions, stale claims, open questions. All findings cite note paths. Read-only.
+- **`ob-graduate`** (#27): promote inbox/Atlas idea → `02 Projects/<name>/` with `_context.md` + task list; marks source note `status: graduated`. Bidirectional links.
+- **`ob-panel`** (#24): 3–5 named perspective roles (Skeptic, Pragmatist, etc.) each grounded in vault notes → synthesis with final recommendation. Read-only.
+- **`ob-idea-discovery`** (#26): rank 3–5 next-direction candidates by composite score (recency, backlinks, project alignment, emergence signal). Read-only.
+- **`ob-learn`** (#28): audit TILs → stale candidates (>180 days), contradiction candidates, promotion candidates. Optional promotion to `01 Atlas/Principles/` with confirmation.
+- **Marketplace updated**: all 9 new skills added to `.claude-plugin/marketplace.json`.
+
 ## Pending
-- **Wave 2 skills**: `ob-person` (#10), `ob-decide` (#11), `ob-project` (#12), `ob-projects` (#13), `ob-ingest` (#14), `ob-synthesize` (#15), `ob-reconcile` (#16), `ob-recap` (#17), `ob-review` (#18), `ob-health` (#19), `ob-adr` (#20).
-- **Wave 3–4 skills**: `ob-architect` (#9), `ob-emerge` (#21), `ob-connect` (#22), `ob-challenge` (#23), `ob-panel` (#24), `ob-vault-synthesis` (#25), `ob-idea-discovery` (#26), `ob-graduate` (#27), `ob-learn` (#28).
 - **Run `ob:setup` on the vault** (not done yet). This will reconcile the structure:
   - Rename early Area MOCs to the target taxonomy: `Work - CRM` → `Work`; `Keyboards & Peripherals` + `Maker & Electronics` → under `Hobbies/`; `Finances & Bitcoin` → `Finances/` (with `Investments/` + `Bitcoin/`).
   - Migrate `Talent Stream/Worklog/*` into the unified `06 Daily/`.
@@ -57,4 +81,4 @@ Built by hand in earlier turns, NOT yet via `ob:setup`, so it diverges from the 
 - `08 Templates/` numbering vs keeping `Templates/` — decide after running `ob:setup` (Templater reconfig cost).
 
 ## Next step
-Build `ob-capture` (quick capture to `00 Inbox/` with frontmatter tagging) — issue #5.
+All 28 skills from issue #1 are implemented. Run `ob:setup` on the actual vault to apply the structure and smoke-test the skills end-to-end.

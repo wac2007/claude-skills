@@ -13,7 +13,27 @@
         "./skills/ob-find",
         "./skills/ob-daily",
         "./skills/ob-world",
-        "./skills/ob-save"
+        "./skills/ob-save",
+        "./skills/ob-person",
+        "./skills/ob-decide",
+        "./skills/ob-project",
+        "./skills/ob-projects",
+        "./skills/ob-ingest",
+        "./skills/ob-synthesize",
+        "./skills/ob-reconcile",
+        "./skills/ob-recap",
+        "./skills/ob-review",
+        "./skills/ob-health",
+        "./skills/ob-adr",
+        "./skills/ob-architect",
+        "./skills/ob-emerge",
+        "./skills/ob-connect",
+        "./skills/ob-challenge",
+        "./skills/ob-vault-synthesis",
+        "./skills/ob-graduate",
+        "./skills/ob-panel",
+        "./skills/ob-idea-discovery",
+        "./skills/ob-learn"
       ]
     }
   ]
