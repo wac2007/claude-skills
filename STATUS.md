@@ -55,11 +55,13 @@ Built by hand in earlier turns, NOT yet via `ob:setup`, so it diverges from the 
 - **`ob-learn`** (#28): audit TILs → stale candidates (>180 days), contradiction candidates, promotion candidates. Optional promotion to `01 Atlas/Principles/` with confirmation.
 - **Marketplace updated**: all 9 new skills added to `.claude-plugin/marketplace.json`.
 
+## Vault status (2026-06-16)
+- **`ob:setup` run**: all 12 steps validated. Daily.md template patched (`status:` field added). Linter now ignores `08 Templates/`. Both launchd agents registered.
+- **`ob:health` run**: 112 notes audited — 1 HIGH (empty ghost `data replication.md`), 68 MEDIUM (stale Computing Concepts notes from 2024), 100 LOW orphans (no MOC), 99 LOW missing frontmatter (pre-ob notes). All expected and understood.
+- **GitHub issues**: all 21 issues closed (#1, #9–#28). Repository at `wac2007/claude-skills` has 0 open issues.
+- **Optional remaining hygiene**: create `01 Atlas/Computing Concepts.md` MOC; migrate `Study/` into ob buckets; move 4 SVGZ files from vault root.
+
 ## Pending
-- **Run `ob:setup` on the vault** (not done yet). This will reconcile the structure:
-  - Rename early Area MOCs to the target taxonomy: `Work - CRM` → `Work`; `Keyboards & Peripherals` + `Maker & Electronics` → under `Hobbies/`; `Finances & Bitcoin` → `Finances/` (with `Investments/` + `Bitcoin/`).
-  - Migrate `Talent Stream/Worklog/*` into the unified `06 Daily/`.
-  - Move `Research/`, `Web Clipper/`, `YT Transcripts/` → `05 Resources/`.
 - Old single-skill version parked at `~/.claude/ob-setup.old/` — safe to delete.
 
 ## Decisions locked
