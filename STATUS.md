@@ -4,7 +4,8 @@ Checkpoint of the `ob` plugin work. Last updated: 2026-06-15.
 
 ## Done
 - **Plugin scaffolded** at `./ob` (name `ob`, skills-dir/marketplace-installable). Commands namespace to `/ob:*`.
-- **`ob-setup` skill hardened** (`ob/skills/ob-setup/SKILL.md`): 10 idempotent steps, Quick reference, Target structure, Common mistakes. Audited and fixed in a grill session — see Decisions locked below.
+- **`ob-setup` skill hardened** (`ob/skills/ob-setup/SKILL.md`): 12 idempotent steps, Quick reference, Target structure, Common mistakes. Audited and fixed in a grill session — see Decisions locked below.
+- **`ob-setup` issue #2 complete**: Step 11 (CRITICAL_FACTS.md), Step 12 (Projects Index), updated global-pointer.md and vault-CLAUDE.md reading discipline. CRITICAL_FACTS.md gives ≤2-read navigation to any active project.
 - **`ob-weekly` skill complete** (`ob/skills/ob-weekly/SKILL.md`): 8-step headless skill — resolves last closed ISO week, extracts tasks/decisions/narrative from daily notes, synthesizes summary, writes weekly file, archives dailies. Fully idempotent.
 - **All 8 templates present** (`ob/skills/ob-setup/assets/templates/`): Daily, Weekly, Note, Person, Asset, TIL, Area MOC, Project Context. Daily uses Templater syntax (`<% tp.date.now() %>`); rollover script writes frontmatter inline independently.
 - **Scripts** (`ob/skills/ob-setup/scripts/`): `ob-install.sh` (writes `~/.claude/ob/ob.env`, copies scripts, bootstraps launchd — requires explicit user permission), `ob-daily-rollover.sh` (create today inline + prune empty previous), `ob-weekly-run.sh` (headless `claude -p "/ob:weekly"`).
@@ -46,4 +47,4 @@ Built by hand in earlier turns, NOT yet via `ob:setup`, so it diverges from the 
 - `08 Templates/` numbering vs keeping `Templates/` — decide after running `ob:setup` (Templater reconfig cost).
 
 ## Next step
-Build `ob-capture` (quick capture to `00 Inbox/` with frontmatter tagging).
+Build `ob-capture` (quick capture to `00 Inbox/` with frontmatter tagging) — issue #5.

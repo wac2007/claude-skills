@@ -24,7 +24,7 @@ Atlas vs Resources = authored vs captured. Area vs Project = ongoing vs delimite
 - One-way links: the vault may point at a code repo; a repo never points into the vault.
 
 ## Reading discipline (saves context)
-- Start at `04 Areas/Areas - Index.md` -> open the ONE relevant MOC -> follow links to 2-3 notes.
+- Start at `CRITICAL_FACTS.md` → for active work go to `02 Projects/Projects - Index.md` → project `_context.md`; for areas go to `04 Areas/Areas - Index.md` → one MOC → 2-3 notes.
 - Never scan whole folders. Prefer the exact path given.
 
 ## Metadata schema (properties, not structural tags)

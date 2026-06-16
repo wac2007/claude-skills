@@ -19,6 +19,7 @@ Bundled files are referenced via paths relative to this SKILL.md file (e.g. `./a
 | --- | --- | --- |
 | Structure | numbered buckets, `_context.md` per project, `00 Dashboard.md` | this skill |
 | Operating rules | vault `CLAUDE.md` + global pointer | `assets/vault-CLAUDE.md`, `assets/global-pointer.md` |
+| Navigation shortcuts | `CRITICAL_FACTS.md` (vault root) + `02 Projects/Projects - Index.md` | `assets/CRITICAL_FACTS.md`, Step 12 |
 | Metadata | frontmatter properties (`type`,`status`,`area`,`project`) | embedded in `CLAUDE.md` |
 | Tags | controlled English vocabulary | `assets/Tag System.md` |
 | Templates | note, daily, weekly, project, area MOC, TIL, person, asset | `assets/templates/` |
@@ -51,7 +52,8 @@ Bundled files are referenced via paths relative to this SKILL.md file (e.g. `./a
 ├── 08 Templates/
 ├── 99 Archives/           # not read unless explicitly asked
 ├── 00 Dashboard.md
-└── CLAUDE.md
+├── CLAUDE.md
+└── CRITICAL_FACTS.md    # auto-updated by ob:setup (Steps 11-12)
 ```
 Area subfolders are illustrative defaults — adapt to the user's responsibilities.
 
@@ -129,6 +131,22 @@ Daily creation = Periodic Notes. Empty-day pruning + weekly summary = launchd, i
 ### Step 10 — Hotkeys (optional)
 - **Validate**: are the bindings present in `.obsidian/hotkeys.json`?
 - **Implement**: merge `./assets/hotkeys.json` into `.obsidian/hotkeys.json` (don't drop existing bindings).
+
+### Step 11 — CRITICAL_FACTS.md
+- **Validate**: does `<vault>/CRITICAL_FACTS.md` exist and contain the `BEGIN/END ob` markers?
+- **Generate active-projects list**: list all subdirectories of `02 Projects/` (exclude files). For each, attempt to read its `_context.md` for a frontmatter `description` field or the first H1 subtitle after the title. Format: `- FolderName → \`02 Projects/FolderName/_context.md\`` (one line per project). If `02 Projects/` is empty, write `- (no active projects)`.
+- **Implement (create)**: if absent, copy `./assets/CRITICAL_FACTS.md`, substitute `{{VAULT}}` with the vault path and `{{PROJECTS_LIST}}` with the generated list.
+- **Implement (update)**: if present, replace only the content between `<!-- BEGIN ob -->` and `<!-- END ob -->` with the freshly substituted block. Leave any content outside the markers untouched.
+
+### Step 12 — Projects Index
+- **Validate**: does `02 Projects/Projects - Index.md` exist?
+- **Implement (create)**: if absent, generate the file in the same style as `04 Areas/Areas - Index.md`:
+  - Frontmatter: `type: moc`, `kind: index`.
+  - H1: `# Projects — Index`.
+  - Agent tip blockquote: "Each project is a subdirectory in `02 Projects/` with a `_context.md`. To enumerate all projects, list that folder."
+  - `## Projects` section: one bullet per subdirectory — `- [[FolderName]] — <description or placeholder>`. Use the `description` from `_context.md` frontmatter if available; otherwise write `(add description)`.
+  - `## How to use` section: 1) Read `CRITICAL_FACTS.md` for the active-projects summary. 2) Open `_context.md` in the relevant project folder. 3) Finished/shipped work lives in `03 End Products/`.
+- **Implement (update)**: if present, check whether any subdirectories in `02 Projects/` are missing from the `## Projects` list. Append missing ones. Never remove existing entries.
 
 ## Common mistakes
 
