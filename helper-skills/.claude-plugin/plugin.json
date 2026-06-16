@@ -1,0 +1,5 @@
+{
+  "name": "helper-skills",
+  "description": "Development helper skills for the claude-skills repo — installation utilities and local testing tools.",
+  "version": "0.1.0"
+}
