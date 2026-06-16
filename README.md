@@ -14,16 +14,21 @@ Entry skill: `/ob:setup`. See `ob/README.md` for the full layout and `STATUS.md`
 
 ### First time (bootstrap)
 
-After cloning, run the bootstrap script once to install all skills globally:
+After cloning, `cd` into the repo and run the bootstrap script once:
 
+**macOS / Linux:**
 ```bash
 ./bootstrap.sh
 ```
 
-Or equivalently:
+**Windows:**
+```bat
+bootstrap.bat
+```
 
+**Any OS (universal):**
 ```bash
-npx skills add ~/development/claude-skills -g -y
+npx skills add . -g -y
 ```
 
 After this, `/install-skills` is available inside Claude Code for all future updates.
@@ -42,10 +47,10 @@ Inside Claude Code, use the skill:
 /install-skills
 ```
 
-Or run directly:
+Or run directly from the repo directory:
 
 ```bash
-npx skills add ~/development/claude-skills
+npx skills add . -g -y
 ```
 
 Both commands are interactive — select which skills and agents to install. Add `-g` to install globally (`~/.claude/skills/`) or `-y` to skip prompts.
