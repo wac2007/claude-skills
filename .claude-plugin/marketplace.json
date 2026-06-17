@@ -42,7 +42,8 @@
         "./skills/ob-panel",
         "./skills/ob-idea-discovery",
         "./skills/ob-learn",
-        "./skills/ob-fireflies"
+        "./skills/ob-fireflies",
+        "./skills/ob-panning-for-gold"
       ]
     }
   ]

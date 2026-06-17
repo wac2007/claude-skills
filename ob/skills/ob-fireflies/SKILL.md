@@ -71,6 +71,17 @@ Extract from the response:
 - `TRANSCRIPT_TEXT`: full transcript text (speaker-labelled turns if available)
 - `ACTION_ITEMS`: any action items the MCP returns, as a bullet list (blank if none)
 
+## Step 3.5 — Generate summary and action items from transcript
+
+**Do this inline — no additional MCP or tool calls.**
+
+Using only the already-fetched `TRANSCRIPT_TEXT` (and any `SUMMARY` / `ACTION_ITEMS` the MCP returned), synthesise:
+
+- **`SUMMARY`**: 3–5 sentence prose summary of what was discussed and decided. If the MCP already returned a non-empty summary, enrich it with any key points it missed; otherwise write one from scratch.
+- **`ACTION_ITEMS`**: a bullet list of concrete next steps with an owner name in brackets where determinable (e.g. `- [ ] Send proposal draft [Alice]`). If the MCP already returned action items, merge and de-duplicate; otherwise derive them from the transcript. If no actions are evident, write `- None identified.`
+
+Do not call any tool yet — hold `SUMMARY` and `ACTION_ITEMS` in memory for Step 5.
+
 ## Step 4 — Derive file path
 
 - `SLUG`: lowercase `MEETING_TITLE` → spaces and punctuation → `-` → strip non-alphanumeric-or-dash → truncate at 60 chars
