@@ -1,0 +1,21 @@
+{
+  "name": "ob:auto-capture",
+  "description": "Behavioral skill that captures ACT NOW items and a session summary to Open Brain when a session ends.",
+  "category": "skills",
+  "author": {
+    "name": "Jared Irish",
+    "github": "jaredirish"
+  },
+  "forked_from": "https://github.com/NateBJones-Projects/OB1/tree/main/skills/auto-capture",
+  "version": "1.0.0",
+  "requires": {
+    "open_brain": true,
+    "services": [],
+    "tools": ["AI client with Open Brain MCP tools (capture_thought, search_thoughts)"]
+  },
+  "tags": ["capture", "session-close", "workflow", "open-brain", "ob"],
+  "difficulty": "beginner",
+  "estimated_time": "5 minutes",
+  "created": "2026-06-17",
+  "updated": "2026-06-17"
+}

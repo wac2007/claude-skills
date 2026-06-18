@@ -43,7 +43,8 @@
         "./skills/ob-idea-discovery",
         "./skills/ob-learn",
         "./skills/ob-fireflies",
-        "./skills/ob-panning-for-gold"
+        "./skills/ob-panning-for-gold",
+        "./skills/ob-auto-capture"
       ]
     }
   ]
